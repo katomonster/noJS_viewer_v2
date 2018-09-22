@@ -1,0 +1,72 @@
+input[type=radio] {
+	display: none
+}
+
+input[type=radio]:checked + figure {
+	width: 815px;
+	height: 543px;
+	background-image: none;
+}
+
+figure {
+	margin: 20px;
+}
+
+.thumb {
+	width: 144px;
+	height: 88px;
+	background-size: cover;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.thumbnails {
+	width: 815px;
+	overflow: scroll;
+	margin: 0 20px;
+}
+.thumb-slider {
+	white-space: nowrap;
+	overflow: hidden;
+	width: 1440px;
+}
+#image01:checked + figure,
+.thumb[for='image01'] {
+	background-image: url(images/image01.jpg);
+}
+#image02:checked + figure,
+.thumb[for='image02'] {
+	background-image: url(images/image02.jpg);
+}
+#image03:checked + figure,
+.thumb[for='image03'] {
+	background-image: url(images/image03.jpg);
+}
+#image04:checked + figure,
+.thumb[for='image04'] {
+	background-image: url(images/image04.jpg);
+}
+#image05:checked + figure,
+.thumb[for='image05'] {
+	background-image: url(images/image05.jpg);
+}
+#image06:checked + figure,
+.thumb[for='image06'] {
+	background-image: url(images/image06.jpg);
+}
+#image07:checked + figure,
+.thumb[for='image07'] {
+	background-image: url(images/image07.jpg);
+}
+#image08:checked + figure,
+.thumb[for='image08'] {
+	background-image: url(images/image08.jpg);
+}
+#image09:checked + figure,
+.thumb[for='image09'] {
+	background-image: url(images/image09.jpg);
+}
+#image10:checked + figure,
+.thumb[for='image10'] {
+	background-image: url(images/image10.jpg);
+}
