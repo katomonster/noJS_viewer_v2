@@ -8,27 +8,88 @@ input[type=radio]:checked + figure {
 	background-image: none;
 }
 
+#photo-viewer {
+	position: absolute;
+}
+
 figure {
-	margin: 20px;
+	position: absolute;
+	top: 0; /* */
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.prev-btn,
+.next-btn {
+	position: absolute;
+    top: 50%;
+    color: #fff;
+    font-size: 30px;
+    display: none;
+}
+
+.prev-btn {
+	left: 12px;
+}
+
+.prev-btn:before,
+.next-btn:before {
+	content: '';
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: 0 solid #fff;
+}
+
+.prev-btn:before {
+	border-top-width: 4px;
+	border-left-width: 4px;
+	transform: rotate(-45deg);
+	box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.3)
+}
+
+.next-btn {
+	right: 12px;
+}
+
+.next-btn:before {
+	border-top-width: 4px;
+	border-right-width: 4px;
+	transform: rotate(45deg);
+	box-shadow: 2px -2px 3px rgba(0, 0, 0, 0.3)
+}
+
+input[type=radio]:checked + figure + .thumb + .prev-btn,
+input[type=radio]:checked + figure + .thumb + .prev-btn + .next-btn {
+	display: block;
+}
+input[type=radio]:checked + figure + .thumb {
+	opacity: 0.5;
 }
 
 .thumb {
 	width: 144px;
 	height: 88px;
 	background-size: cover;
-	display: inline-block;
+	float:left;
 	cursor: pointer;
+	margin-right: 4px;
+}
+figure:last-of-type + .thumb {
+	margin-right: 0;
 }
 
 .thumbnails {
 	width: 815px;
 	overflow: scroll;
-	margin: 0 20px;
+	margin: 547px 0 0;
+	-webkit-overflow-scrolling: touch;
 }
 .thumb-slider {
 	white-space: nowrap;
 	overflow: hidden;
-	width: 1440px;
+	width: 1476px;
 }
 #image01:checked + figure,
 .thumb[for='image01'] {
