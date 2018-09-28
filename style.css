@@ -1,23 +1,32 @@
+#photo-viewer {
+	position: absolute;
+	width: 815px;
+	overflow: hidden;
+}
+
 input[type=radio] {
 	display: none
 }
 
 input[type=radio]:checked + figure {
-	width: 815px;
-	height: 543px;
-	background-image: none;
+	transform: translateX(0);
+	transition: transform 500ms;
 }
-
-#photo-viewer {
-	position: absolute;
+input[type=radio]:not(:active) + figure {
+	transition: transform 500ms;
 }
-
+input[type=radio]:active + figure {
+	transform: translateX(-100%);
+}
 figure {
 	position: absolute;
 	top: 0; /* */
 	left: 0;
 	margin: 0;
 	padding: 0;
+	width: 815px;
+	height: 543px;
+	transform: translateX(100%);
 }
 
 .prev-btn,
@@ -91,43 +100,43 @@ figure:last-of-type + .thumb {
 	overflow: hidden;
 	width: 1476px;
 }
-#image01:checked + figure,
+#image01 + figure,
 .thumb[for='image01'] {
 	background-image: url(images/image01.jpg);
 }
-#image02:checked + figure,
+#image02 + figure,
 .thumb[for='image02'] {
 	background-image: url(images/image02.jpg);
 }
-#image03:checked + figure,
+#image03 + figure,
 .thumb[for='image03'] {
 	background-image: url(images/image03.jpg);
 }
-#image04:checked + figure,
+#image04 + figure,
 .thumb[for='image04'] {
 	background-image: url(images/image04.jpg);
 }
-#image05:checked + figure,
+#image05 + figure,
 .thumb[for='image05'] {
 	background-image: url(images/image05.jpg);
 }
-#image06:checked + figure,
+#image06 + figure,
 .thumb[for='image06'] {
 	background-image: url(images/image06.jpg);
 }
-#image07:checked + figure,
+#image07 + figure,
 .thumb[for='image07'] {
 	background-image: url(images/image07.jpg);
 }
-#image08:checked + figure,
+#image08 + figure,
 .thumb[for='image08'] {
 	background-image: url(images/image08.jpg);
 }
-#image09:checked + figure,
+#image09 + figure,
 .thumb[for='image09'] {
 	background-image: url(images/image09.jpg);
 }
-#image10:checked + figure,
+#image10 + figure,
 .thumb[for='image10'] {
 	background-image: url(images/image10.jpg);
 }
