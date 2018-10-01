@@ -8,6 +8,22 @@ input[type=radio] {
 	display: none
 }
 
+figure {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 815px;
+	height: 543px;
+}
+.for-next {
+	transform: translateX(100%);
+}
+.for-prev {
+	transform: translateX(-100%);
+}
+
 input[type=radio]:checked + figure {
 	transform: translateX(0);
 	transition: transform 500ms;
@@ -15,17 +31,10 @@ input[type=radio]:checked + figure {
 input[type=radio]:not(:active) + figure {
 	transition: transform 500ms;
 }
-input[type=radio]:active + figure {
+input[type=radio]:active + .for-next {
 	transform: translateX(-100%);
 }
-figure {
-	position: absolute;
-	top: 0; /* */
-	left: 0;
-	margin: 0;
-	padding: 0;
-	width: 815px;
-	height: 543px;
+input[type=radio]:active + .for-prev {
 	transform: translateX(100%);
 }
 
@@ -69,10 +78,13 @@ figure {
 	box-shadow: 2px -2px 3px rgba(0, 0, 0, 0.3)
 }
 
+input[type=radio]:checked + figure + input + figure + .thumb + .prev-btn,
+input[type=radio]:checked + figure + input + figure + .thumb + .prev-btn + .next-btn,
 input[type=radio]:checked + figure + .thumb + .prev-btn,
 input[type=radio]:checked + figure + .thumb + .prev-btn + .next-btn {
 	display: block;
 }
+input[type=radio]:checked + figure + input + figure + .thumb,
 input[type=radio]:checked + figure + .thumb {
 	opacity: 0.5;
 }
@@ -101,42 +113,52 @@ figure:last-of-type + .thumb {
 	width: 1476px;
 }
 #image01 + figure,
+#image01-prev + figure,
 .thumb[for='image01'] {
 	background-image: url(images/image01.jpg);
 }
 #image02 + figure,
+#image02-prev + figure,
 .thumb[for='image02'] {
 	background-image: url(images/image02.jpg);
 }
 #image03 + figure,
+#image03-prev + figure,
 .thumb[for='image03'] {
 	background-image: url(images/image03.jpg);
 }
 #image04 + figure,
+#image04-prev + figure,
 .thumb[for='image04'] {
 	background-image: url(images/image04.jpg);
 }
 #image05 + figure,
+#image05-prev + figure,
 .thumb[for='image05'] {
 	background-image: url(images/image05.jpg);
 }
 #image06 + figure,
+#image06-prev + figure,
 .thumb[for='image06'] {
 	background-image: url(images/image06.jpg);
 }
 #image07 + figure,
+#image07-prev + figure,
 .thumb[for='image07'] {
 	background-image: url(images/image07.jpg);
 }
 #image08 + figure,
+#image08-prev + figure,
 .thumb[for='image08'] {
 	background-image: url(images/image08.jpg);
 }
 #image09 + figure,
+#image09-prev + figure,
 .thumb[for='image09'] {
 	background-image: url(images/image09.jpg);
 }
 #image10 + figure,
+#image10-prev + figure,
 .thumb[for='image10'] {
 	background-image: url(images/image10.jpg);
 }
