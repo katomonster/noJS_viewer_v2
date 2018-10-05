@@ -6,7 +6,9 @@
 	background: #fff;
 	margin-top: 10px;
 }
-
+input[type=radio] {
+	display: none;
+}
 /* viewer */
 figure {
 	position: absolute;
