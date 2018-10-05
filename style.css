@@ -254,6 +254,21 @@ figure {
 	font-family: Helvetica, Arial, sans-serif;
 }
 
+.view-all-btn {
+	display: block;
+	width: 500px;
+	height: 600px;
+	background-image: url(images/landing-image.png);
+	background-size: contain;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap
+}
+
 .close-btn {
 	display: none;
+	position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
 }
