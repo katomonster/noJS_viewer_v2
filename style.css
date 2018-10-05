@@ -2,10 +2,9 @@
 	position: absolute;
 	width: 815px;
 	overflow: hidden;
-}
-
-input[type=radio] {
-	display: none
+	top: 0;
+	background: #fff;
+	margin-top: 10px;
 }
 
 /* viewer */
@@ -117,10 +116,10 @@ figure {
 	overflow: hidden;
 }
 .all-view .thumb-slider {
-	width: 1476px;
+	width: 2068px;
 }
 .exterior-view .thumb-slider {
-	width: 884px;
+	width: 1484px;
 }
 .image01 + figure,
 .image01-prev + figure,
@@ -161,26 +160,56 @@ figure {
 .image07 + figure,
 .image07-prev + figure,
 .thumb[for='image07'],
-.thumb[for='image07-int'] {
+.thumb[for='image07-ex'] {
 	background-image: url(images/image07.jpg);
 }
 .image08 + figure,
 .image08-prev + figure,
 .thumb[for='image08'],
-.thumb[for='image08-int'] {
+.thumb[for='image08-ex'] {
 	background-image: url(images/image08.jpg);
 }
 .image09 + figure,
 .image09-prev + figure,
 .thumb[for='image09'],
-.thumb[for='image09-int'] {
+.thumb[for='image09-ex'] {
 	background-image: url(images/image09.jpg);
 }
 .image10 + figure,
 .image10-prev + figure,
 .thumb[for='image10'],
-.thumb[for='image10-int'] {
+.thumb[for='image10-ex'] {
 	background-image: url(images/image10.jpg);
+}
+.image11 + figure,
+.image11-prev + figure,
+.thumb[for='image11'],
+.thumb[for='image11-int'] {
+	background-image: url(images/image11.jpg);
+}
+.image11 + figure,
+.image11-prev + figure,
+.thumb[for='image11'],
+.thumb[for='image11-int'] {
+	background-image: url(images/image11.jpg);
+}
+.image12 + figure,
+.image12-prev + figure,
+.thumb[for='image12'],
+.thumb[for='image12-int'] {
+	background-image: url(images/image12.jpg);
+}
+.image13 + figure,
+.image13-prev + figure,
+.thumb[for='image13'],
+.thumb[for='image13-int'] {
+	background-image: url(images/image13.jpg);
+}
+.image14 + figure,
+.image14-prev + figure,
+.thumb[for='image14'],
+.thumb[for='image14-int'] {
+	background-image: url(images/image14.jpg);
 }
 
 /* viewer tab */
@@ -188,14 +217,16 @@ figure {
 	display: none;
 }
 
-.input-viewer-tab:checked + label + .thumbnails {
+.thumbnails:target {
 	display: block;
 }
 
-.input-viewer-tab:checked + label {
+.thumbnails:target + a {
 	color: #007ee5;
 	text-decoration: underline;
 }
+
+.thumbnails:target ~ .close-btn { display: block; }
 
 .viewer-tab {
 	position: absolute;
@@ -217,4 +248,12 @@ figure {
 .viewer-tab:nth-of-type(3) {
 	left: 200px;
 }
+.view-all-btn,
+.close-btn {
+	color: #555;
+	font-family: Helvetica, Arial, sans-serif;
+}
 
+.close-btn {
+	display: none;
+}
