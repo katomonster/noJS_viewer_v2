@@ -142,13 +142,13 @@ figure {
 
 /* thumb slider widths*/
 .all-view .thumb-slider {
-	width: 2068px;
+	width: 2216px;
 }
 .exterior-view .thumb-slider {
 	width: 1484px;
 }
 .interior-view .thumb-slider {
-	width: 588px
+	width: 736px
 }
 
 /* background image */
@@ -241,6 +241,13 @@ figure {
 .thumb[for='image14'],
 .thumb[for='image14-int'] {
 	background-image: url(images/image14.jpg);
+}
+
+.image15 + figure,
+.image15-prev + figure,
+.thumb[for='image15'],
+.thumb[for='image15-int'] {
+	background-image: url(images/image15.jpg);
 }
 
 /* ======= main spawning ======= */
