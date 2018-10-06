@@ -1,14 +1,6 @@
-main {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: none;
-	pointer-events: none;
-}
-
+/* ======= general styles ======= */
 #photo-viewer {
+	box-sizing: border-box;
 	position: relative;
 	width: 815px;
 	overflow: hidden;
@@ -20,30 +12,27 @@ main {
 	z-index: 10;
 	pointer-events: auto;
 }
-.foo:before {
-	content:'';
-	position: absolute;
-	top: 0
-	left: 0;
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: red;
-}
+
 input {
 	display: none;
 }
-/* viewer */
+
+/* ======= viewer ======= */
+
+/* figure, shows the large image as bg image*/
 figure {
 	position: absolute;
-	top: 30px;
+	top: 42px;
 	left: 0;
 	margin: 0;
-	padding: 0;
-	width: 815px;
+	width: 100%;
 	height: 543px;
 	z-index: 1;
+	background-size: contain;
+	background-repeat: no-repeat;
+	pointer-events: none;
 }
+/* figure specific to prev/next actions */
 .for-next {
 	transform: translateX(100%);
 }
@@ -51,6 +40,7 @@ figure {
 	transform: translateX(-100%);
 }
 
+/* thumbnail slider */
 .thumb-slider input[type=radio]:checked + figure {
 	transform: translateX(0);
 	transition: transform 500ms;
@@ -66,15 +56,17 @@ figure {
 	transform: translateX(100%);
 }
 
+/* next prev button */
 .prev-btn,
 .next-btn {
 	position: absolute;
-    top: 50%;
+    top: calc(50% - 32px);
     color: #fff;
     font-size: 30px;
     display: none;
     z-index: 20;
 	cursor: pointer;
+	transform: translateY(-50%);
 }
 
 .prev-btn {
@@ -114,6 +106,9 @@ figure {
 .thumb-slider input[type=radio]:checked + figure + .thumb + .prev-btn + .next-btn {
 	display: block;
 }
+
+
+/* thumbnail */
 .thumb-slider input[type=radio]:checked + figure + input + figure + .thumb,
 .thumb-slider input[type=radio]:checked + figure + .thumb {
 	opacity: 0.5;
@@ -132,25 +127,31 @@ figure {
 }
 
 .thumbnails {
-	width: 815px;
+	width: 100%;
 	overflow: scroll;
-	margin: 578px 0 0;
+	margin: 585px 0 0;
 	-webkit-overflow-scrolling: touch;
 	display: none;
 	border: 6px solid #fff;
-	border-top-width: 0;
 	box-sizing: border-box;
 }
 .thumb-slider {
 	white-space: nowrap;
 	overflow: hidden;
 }
+
+/* thumb slider widths*/
 .all-view .thumb-slider {
 	width: 2068px;
 }
 .exterior-view .thumb-slider {
 	width: 1484px;
 }
+.interior-view .thumb-slider {
+	width: 588px
+}
+
+/* background image */
 .image01 + figure,
 .image01-prev + figure,
 .thumb[for='image01'],
@@ -242,7 +243,17 @@ figure {
 	background-image: url(images/image14.jpg);
 }
 
-/* main spawning*/
+/* ======= main spawning ======= */
+main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	pointer-events: none;
+}
+
 #input-modal-spawn:checked ~ main,
 #input-modal-spawn:checked ~ .overlay {
 	display: block;
@@ -250,7 +261,7 @@ figure {
 
 .overlay {
 	display: none;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -259,7 +270,7 @@ figure {
 	cursor: pointer;
 }
 
-/* viewer tab */
+/* ======= viewer tab ======= */
 .input-tab-toggle:checked + label + .thumbnails {
 	display: block;
 }
@@ -267,6 +278,7 @@ figure {
 .input-tab-toggle:checked + label {
 	color: #007ee5;
 	text-decoration: underline;
+	font-weight: bold;
 }
 
 .input-tab-toggle:checked  ~ .close-btn { display: block; }
@@ -275,38 +287,43 @@ figure {
 	position: absolute;
 	top: 0;
 	color: #555;
-	font-size: 14px;
 	line-height: 28px;
 	font-family: Helvetica, Arial, sans-serif;
 	display: block;
 	width: 100px;
-	padding: 0 20px;
+	text-indent: 20px;
+	font-size: 14px;
 }
 .viewer-tab:first-of-type {
 	left: 0;
 }
 .viewer-tab:nth-of-type(2) {
-	left: 100px;
+	left: 80px;
 }
 .viewer-tab:nth-of-type(3) {
-	left: 200px;
+	left: 180px;
 }
-.view-all-btn,
+.viewer-tab,
 .close-btn {
 	color: #555;
 	font-family: Helvetica, Arial, sans-serif;
-	cursor: pointer
+	cursor: pointer;
+    line-height: 42px;
 }
 
 .view-all-btn {
 	display: block;
-	width: 500px;
-	height: 600px;
-	background-image: url(images/landing-image.png);
-	background-size: contain;
+	max-width: 510px;
+	max-height: 600px;
+	width: 100%;
+	height: 105vw;
 	overflow: hidden;
 	text-indent: 100%;
-	white-space: nowrap
+	white-space: nowrap;
+	background-image: url(images/landing-image.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-position: center;
 }
 
 .close-btn {
@@ -314,6 +331,36 @@ figure {
 	position: absolute;
     top: 0;
     right: 10px;
-    line-height: 28px;
-    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 20px;
+    width: 42px;
+    text-decoration: none;
+}
+
+.close-btn:before {
+	content: "\00d7" " ";
+	font-size: 30px;
+}
+
+@media (max-width: 814px) {
+	#photo-viewer {
+		width: 100%;
+		border-left: 8px solid #fff;
+		border-right: 8px solid #fff;
+	}
+	.thumbnails {
+		margin-top: calc(66.625vw + 32px);
+		border-left: 0;
+		border-right: 0;
+	}
+	.viewer-tab:nth-of-type(2) {
+		left: 60px;
+	}
+	.viewer-tab:nth-of-type(3) {
+		left: 140px;
+	}
+	.close-btn {
+		right: 0;
+	}
 }
