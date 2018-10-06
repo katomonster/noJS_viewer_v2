@@ -6,248 +6,252 @@
         <meta name='viewport' content='width=device-width initial-scale=1.0 minimum-scale=1.0 maximum-scale=1.0 user-scalable=no'/>
 </head>
 <body>
-	<a href='#all-view' class='view-all-btn'>See Photos</a>
-	<div id='photo-viewer'>
-		<div class='thumbnails all-view' id='all-view'>
-			<form class='thumb-slider'>
-				<input type='radio' name='viewer-image' id='image01-prev' class='image01-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image01' class='image01' checked>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image01'></label>
-				<label class='prev-btn' for='image14-prev'></label>
-				<label class='next-btn' for='image02'></label>
+	<input type='checkbox' id='input-modal-spawn'>
+	<label for='input-modal-spawn' class='view-all-btn'>See Photos</label>
+	<label for='input-modal-spawn' class='overlay'></label>
+	<main>
+		<div id='photo-viewer'>
+			<input type='radio' name='tab-toggle' class='input-tab-toggle' id='tab-all-view' checked>
+			<label class='viewer-tab' for='tab-all-view'>All</label>
+			<div class='thumbnails all-view' id='all-view'>
+				<form class='thumb-slider'>
+					<input type='radio' name='viewer-image' id='image01-prev' class='image01-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image01' class='image01' checked>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image01'></label>
+					<label class='prev-btn' for='image14-prev'></label>
+					<label class='next-btn' for='image02'></label>
 
-				<input type='radio' name='viewer-image' id='image02-prev' class='image02-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image02' class='image02'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image02'></label>
-				<label class='prev-btn' for='image01-prev'></label>
-				<label class='next-btn' for='image03'></label>
+					<input type='radio' name='viewer-image' id='image02-prev' class='image02-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image02' class='image02'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image02'></label>
+					<label class='prev-btn' for='image01-prev'></label>
+					<label class='next-btn' for='image03'></label>
 
-				<input type='radio' name='viewer-image' id='image03-prev' class='image03-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image03' class='image03'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image03'></label>
-				<label class='prev-btn' for='image02-prev'></label>
-				<label class='next-btn' for='image04'></label>
+					<input type='radio' name='viewer-image' id='image03-prev' class='image03-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image03' class='image03'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image03'></label>
+					<label class='prev-btn' for='image02-prev'></label>
+					<label class='next-btn' for='image04'></label>
 
-				<input type='radio' name='viewer-image' id='image04-prev' class='image04-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image04' class='image04'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image04'></label>
-				<label class='prev-btn' for='image03-prev'></label>
-				<label class='next-btn' for='image05'></label>
+					<input type='radio' name='viewer-image' id='image04-prev' class='image04-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image04' class='image04'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image04'></label>
+					<label class='prev-btn' for='image03-prev'></label>
+					<label class='next-btn' for='image05'></label>
 
-				<input type='radio' name='viewer-image' id='image05-prev' class='image05-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image05' class='image05'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image05'></label>
-				<label class='prev-btn' for='image04-prev'></label>
-				<label class='next-btn' for='image06'></label>
+					<input type='radio' name='viewer-image' id='image05-prev' class='image05-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image05' class='image05'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image05'></label>
+					<label class='prev-btn' for='image04-prev'></label>
+					<label class='next-btn' for='image06'></label>
 
-				<input type='radio' name='viewer-image' id='image06-prev' class='image06-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image06' class='image06'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image06'></label>
-				<label class='prev-btn' for='image05-prev'></label>
-				<label class='next-btn' for='image07'></label>
+					<input type='radio' name='viewer-image' id='image06-prev' class='image06-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image06' class='image06'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image06'></label>
+					<label class='prev-btn' for='image05-prev'></label>
+					<label class='next-btn' for='image07'></label>
 
-				<input type='radio' name='viewer-image' id='image07-prev' class='image07-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image07' class='image07'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image07'></label>
-				<label class='prev-btn' for='image06-prev'></label>
-				<label class='next-btn' for='image08'></label>
+					<input type='radio' name='viewer-image' id='image07-prev' class='image07-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image07' class='image07'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image07'></label>
+					<label class='prev-btn' for='image06-prev'></label>
+					<label class='next-btn' for='image08'></label>
 
-				<input type='radio' name='viewer-image' id='image08-prev' class='image08-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image08' class='image08'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image08'></label>
-				<label class='prev-btn' for='image07-prev'></label>
-				<label class='next-btn' for='image09'></label>
+					<input type='radio' name='viewer-image' id='image08-prev' class='image08-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image08' class='image08'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image08'></label>
+					<label class='prev-btn' for='image07-prev'></label>
+					<label class='next-btn' for='image09'></label>
 
-				<input type='radio' name='viewer-image' id='image09-prev' class='image09-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image09' class='image09'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image09'></label>
-				<label class='prev-btn' for='image08-prev'></label>
-				<label class='next-btn' for='image10'></label>
+					<input type='radio' name='viewer-image' id='image09-prev' class='image09-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image09' class='image09'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image09'></label>
+					<label class='prev-btn' for='image08-prev'></label>
+					<label class='next-btn' for='image10'></label>
 
-				<input type='radio' name='viewer-image' id='image10-prev' class='image10-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image10' class='image10'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image10'></label>
-				<label class='prev-btn' for='image09-prev'></label>
-				<label class='next-btn' for='image11'></label>
+					<input type='radio' name='viewer-image' id='image10-prev' class='image10-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image10' class='image10'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image10'></label>
+					<label class='prev-btn' for='image09-prev'></label>
+					<label class='next-btn' for='image11'></label>
 
-				<input type='radio' name='viewer-image' id='image11-prev' class='image11-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image11' class='image11'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image11'></label>
-				<label class='prev-btn' for='image10-prev'></label>
-				<label class='next-btn' for='image12'></label>
+					<input type='radio' name='viewer-image' id='image11-prev' class='image11-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image11' class='image11'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image11'></label>
+					<label class='prev-btn' for='image10-prev'></label>
+					<label class='next-btn' for='image12'></label>
 
-				<input type='radio' name='viewer-image' id='image12-prev' class='image12-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image12' class='image12'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image12'></label>
-				<label class='prev-btn' for='image11-prev'></label>
-				<label class='next-btn' for='image13'></label>
+					<input type='radio' name='viewer-image' id='image12-prev' class='image12-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image12' class='image12'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image12'></label>
+					<label class='prev-btn' for='image11-prev'></label>
+					<label class='next-btn' for='image13'></label>
 
-				<input type='radio' name='viewer-image' id='image13-prev' class='image13-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image13' class='image13'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image13'></label>
-				<label class='prev-btn' for='image12-prev'></label>
-				<label class='next-btn' for='image14'></label>
+					<input type='radio' name='viewer-image' id='image13-prev' class='image13-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image13' class='image13'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image13'></label>
+					<label class='prev-btn' for='image12-prev'></label>
+					<label class='next-btn' for='image14'></label>
 
-				<input type='radio' name='viewer-image' id='image14-prev' class='image14-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image14' class='image14'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image14'></label>
-				<label class='prev-btn' for='image13-prev'></label>
-				<label class='next-btn' for='image01'></label>
-			</form>
+					<input type='radio' name='viewer-image' id='image14-prev' class='image14-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image14' class='image14'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image14'></label>
+					<label class='prev-btn' for='image13-prev'></label>
+					<label class='next-btn' for='image01'></label>
+				</form>
+			</div>
+			<input type='radio' name='tab-toggle' class='input-tab-toggle' id='tab-exterior-view'>
+			<label class='viewer-tab' for='tab-exterior-view'>Exterior</label>
+			<div class='thumbnails exterior-view' id='exterior-view'>
+				<form class='thumb-slider'>
+					<input type='radio' name='viewer-image' id='image01-prev-ex' class='image01-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image01-ex' class='image01' checked>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image01-ex'></label>
+					<label class='prev-btn' for='image10-prev-ex'></label>
+					<label class='next-btn' for='image02-ex'></label>
+
+					<input type='radio' name='viewer-image' id='image02-prev-ex' class='image02-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image02-ex' class='image02'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image02-ex'></label>
+					<label class='prev-btn' for='image01-prev-ex'></label>
+					<label class='next-btn' for='image03-ex'></label>
+
+					<input type='radio' name='viewer-image' id='image03-prev-ex' class='image03-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image03-ex' class='image03'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image03-ex'></label>
+					<label class='prev-btn' for='image02-prev-ex'></label>
+					<label class='next-btn' for='image04-ex'></label>
+
+					<input type='radio' name='viewer-image' id='image04-prev-ex' class='image04-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image04-ex' class='image04'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image04-ex'></label>
+					<label class='prev-btn' for='image03-prev-ex'></label>
+					<label class='next-btn' for='image05-ex'></label>
+
+					<input type='radio' name='viewer-image' id='image05-prev-ex' class='image05-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image05-ex' class='image05'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image05-ex'></label>
+					<label class='prev-btn' for='image04-prev-ex'></label>
+					<label class='next-btn' for='image06-ex'></label>
+
+					<input type='radio' name='viewer-image' id='image06-prev-ex' class='image06-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image06-ex' class='image06'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image06-ex'></label>
+					<label class='prev-btn' for='image05-prev-ex'></label>
+					<label class='next-btn' for='image07-ex'></label>
+
+					<input type='radio' name='viewer-image' id='image07-prev-ex' class='image07-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image07-ex' class='image07'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image07-ex'></label>
+					<label class='prev-btn' for='image06-prev-ex'></label>
+					<label class='next-btn' for='image08-ex'></label>
+
+					<input type='radio' name='viewer-image' id='image08-prev-ex' class='image08-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image08-ex' class='image08'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image08-ex'></label>
+					<label class='prev-btn' for='image07-prev-ex'></label>
+					<label class='next-btn' for='image09-ex'></label>
+
+					<input type='radio' name='viewer-image' id='image09-prev-ex' class='image09-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image09-ex' class='image09'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image09-ex'></label>
+					<label class='prev-btn' for='image08-prev-ex'></label>
+					<label class='next-btn' for='image10-ex'></label>
+
+					<input type='radio' name='viewer-image' id='image10-prev-ex' class='image10-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image10-ex' class='image10'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image10-ex'></label>
+					<label class='prev-btn' for='image09-prev-ex'></label>
+					<label class='next-btn' for='image01-ex'></label>
+				</form>
+			</div>
+			<input type='radio' name='tab-toggle' class='input-tab-toggle' id='tab-interior-view'>
+			<label class='viewer-tab' for='tab-interior-view'>Interior</label>
+			<div class='thumbnails interior-view' id='interior-view'>
+				<form class='thumb-slider'>
+					<input type='radio' name='viewer-image' id='image11-prev-int' class='image11-prev' checked>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image11-int' class='image11'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image11-int'></label>
+					<label class='prev-btn' for='image14-prev-int'></label>
+					<label class='next-btn' for='image12-int'></label>
+
+					<input type='radio' name='viewer-image' id='image12-prev-int' class='image12-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image12-int' class='image12'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image12-int'></label>
+					<label class='prev-btn' for='image11-prev-int'></label>
+					<label class='next-btn' for='image13-int'></label>
+
+					<input type='radio' name='viewer-image' id='image13-prev-int' class='image13-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image13-int' class='image13'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image13-int'></label>
+					<label class='prev-btn' for='image12-prev-int'></label>
+					<label class='next-btn' for='image14-int'></label>
+
+					<input type='radio' name='viewer-image' id='image14-prev-int' class='image14-prev'>
+					<figure class='for-prev'></figure>
+					<input type='radio' name='viewer-image' id='image14-int' class='image14'>
+					<figure class='for-next'></figure>
+					<label class='thumb' for='image14-int'></label>
+					<label class='prev-btn' for='image13-prev-int'></label>
+					<label class='next-btn' for='image11-int'></label>
+				</form>
+			</div>
+			<a href='' class='close-btn'>Close</a>
 		</div>
-		<a href='#all-view' class='viewer-tab'>All</a>
-
-		<div class='thumbnails exterior-view' id='exterior-view'>
-			<form class='thumb-slider'>
-				<input type='radio' name='viewer-image' id='image01-prev-ex' class='image01-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image01-ex' class='image01' checked>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image01-ex'></label>
-				<label class='prev-btn' for='image10-prev-ex'></label>
-				<label class='next-btn' for='image02-ex'></label>
-
-				<input type='radio' name='viewer-image' id='image02-prev-ex' class='image02-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image02-ex' class='image02'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image02-ex'></label>
-				<label class='prev-btn' for='image01-prev-ex'></label>
-				<label class='next-btn' for='image03-ex'></label>
-
-				<input type='radio' name='viewer-image' id='image03-prev-ex' class='image03-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image03-ex' class='image03'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image03-ex'></label>
-				<label class='prev-btn' for='image02-prev-ex'></label>
-				<label class='next-btn' for='image04-ex'></label>
-
-				<input type='radio' name='viewer-image' id='image04-prev-ex' class='image04-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image04-ex' class='image04'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image04-ex'></label>
-				<label class='prev-btn' for='image03-prev-ex'></label>
-				<label class='next-btn' for='image05-ex'></label>
-
-				<input type='radio' name='viewer-image' id='image05-prev-ex' class='image05-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image05-ex' class='image05'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image05-ex'></label>
-				<label class='prev-btn' for='image04-prev-ex'></label>
-				<label class='next-btn' for='image06-ex'></label>
-
-				<input type='radio' name='viewer-image' id='image06-prev-ex' class='image06-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image06-ex' class='image06'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image06-ex'></label>
-				<label class='prev-btn' for='image05-prev-ex'></label>
-				<label class='next-btn' for='image07-ex'></label>
-
-				<input type='radio' name='viewer-image' id='image07-prev-ex' class='image07-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image07-ex' class='image07'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image07-ex'></label>
-				<label class='prev-btn' for='image06-prev-ex'></label>
-				<label class='next-btn' for='image08-ex'></label>
-
-				<input type='radio' name='viewer-image' id='image08-prev-ex' class='image08-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image08-ex' class='image08'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image08-ex'></label>
-				<label class='prev-btn' for='image07-prev-ex'></label>
-				<label class='next-btn' for='image09-ex'></label>
-
-				<input type='radio' name='viewer-image' id='image09-prev-ex' class='image09-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image09-ex' class='image09'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image09-ex'></label>
-				<label class='prev-btn' for='image08-prev-ex'></label>
-				<label class='next-btn' for='image10-ex'></label>
-
-				<input type='radio' name='viewer-image' id='image10-prev-ex' class='image10-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image10-ex' class='image10'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image10-ex'></label>
-				<label class='prev-btn' for='image09-prev-ex'></label>
-				<label class='next-btn' for='image01-ex'></label>
-			</form>
-		</div>
-		<a href='#exterior-view' class='viewer-tab'>Exterior</a>
-
-		<div class='thumbnails interior-view' id='interior-view'>
-			<form class='thumb-slider'>
-				<input type='radio' name='viewer-image' id='image11-prev-int' class='image11-prev' checked>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image11-int' class='image11'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image11-int'></label>
-				<label class='prev-btn' for='image14-prev-int'></label>
-				<label class='next-btn' for='image12-int'></label>
-
-				<input type='radio' name='viewer-image' id='image12-prev-int' class='image12-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image12-int' class='image12'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image12-int'></label>
-				<label class='prev-btn' for='image11-prev-int'></label>
-				<label class='next-btn' for='image13-int'></label>
-
-				<input type='radio' name='viewer-image' id='image13-prev-int' class='image13-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image13-int' class='image13'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image13-int'></label>
-				<label class='prev-btn' for='image12-prev-int'></label>
-				<label class='next-btn' for='image14-int'></label>
-
-				<input type='radio' name='viewer-image' id='image14-prev-int' class='image14-prev'>
-				<figure class='for-prev'></figure>
-				<input type='radio' name='viewer-image' id='image14-int' class='image14'>
-				<figure class='for-next'></figure>
-				<label class='thumb' for='image14-int'></label>
-				<label class='prev-btn' for='image13-prev-int'></label>
-				<label class='next-btn' for='image11-int'></label>
-			</form>
-		</div>
-		<a href='#interior-view' class='viewer-tab'>Interior</a>
-		<a href='' class='close-btn'>Close</a>
-	</div>
-	
+	<main>
 </body>
 </html>
