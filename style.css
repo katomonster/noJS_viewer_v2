@@ -1,5 +1,14 @@
 /* ======= general styles ======= */
-#photo-viewer {
+main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	pointer-events: none;
+}
+section {
 	box-sizing: border-box;
 	position: relative;
 	width: 815px;
@@ -11,6 +20,17 @@
 	transform: translateX(-50%) translateY(-50%);
 	z-index: 10;
 	pointer-events: auto;
+}
+.photo-viewer {
+	box-sizing: border-box;
+	width: 815px;
+	overflow: hidden;
+	z-index: 10;
+	pointer-events: none;
+	max-height: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: transform 300ms;
 }
 
 input {
@@ -131,9 +151,9 @@ figure {
 	overflow: scroll;
 	margin: 585px 0 0;
 	-webkit-overflow-scrolling: touch;
-	display: none;
 	border: 6px solid #fff;
 	box-sizing: border-box;
+	pointer-events: auto;
 }
 .thumb-slider {
 	white-space: nowrap;
@@ -251,15 +271,6 @@ figure {
 }
 
 /* ======= main spawning ======= */
-main {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: none;
-	pointer-events: none;
-}
 
 #input-modal-spawn:checked ~ main,
 #input-modal-spawn:checked ~ .overlay {
@@ -278,8 +289,9 @@ main {
 }
 
 /* ======= viewer tab ======= */
-.input-tab-toggle:checked + label + .thumbnails {
-	display: block;
+.input-tab-toggle:checked + label + .photo-viewer {
+	max-height: 100%;
+    transform: translateX(0);
 }
 
 .input-tab-toggle:checked + label {
@@ -301,13 +313,13 @@ main {
 	text-indent: 20px;
 	font-size: 14px;
 }
-.viewer-tab:first-of-type {
+.viewer-tab[for='tab-all-view'] {
 	left: 0;
 }
-.viewer-tab:nth-of-type(2) {
+.viewer-tab[for='tab-exterior-view'] {
 	left: 80px;
 }
-.viewer-tab:nth-of-type(3) {
+.viewer-tab[for='tab-interior-view'] {
 	left: 180px;
 }
 .viewer-tab,
@@ -351,7 +363,7 @@ main {
 }
 
 @media (max-width: 814px) {
-	#photo-viewer {
+	.photo-viewer {
 		width: 100%;
 		border-left: 8px solid #fff;
 		border-right: 8px solid #fff;
