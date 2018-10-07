@@ -35,7 +35,7 @@ figure {
 .thumb-slider input[type=radio]:not(:active) + figure {
 	transition: transform 500ms;
 }
-.thumb-slider input[type=radio]:active + .for-next {
+.thumb-slider input[type=radio]:active:not(:checked) + .for-next {
 	transform: translateX(-100%);
 }
 .thumb-slider input[type=radio]:active + .for-prev {
@@ -368,6 +368,7 @@ main,
     text-indent: 20px;
     width: 42px;
     text-decoration: none;
+    z-index: 10;
 }
 
 .close-btn:before {
