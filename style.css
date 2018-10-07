@@ -1,38 +1,4 @@
 /* ======= general styles ======= */
-main {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: none;
-	pointer-events: none;
-}
-section {
-	box-sizing: border-box;
-	position: relative;
-	width: 815px;
-	overflow: hidden;
-	top: 50%;
-	left: 50%;
-	background: #fff;
-	box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-	transform: translateX(-50%) translateY(-50%);
-	z-index: 10;
-	pointer-events: auto;
-}
-.photo-viewer {
-	box-sizing: border-box;
-	width: 100%;
-	overflow: hidden;
-	z-index: 10;
-	pointer-events: none;
-	max-height: 0;
-    transform: translateX(100%);
-    pointer-events: none;
-    transition: transform 300ms;
-}
-
 input {
 	display: none;
 }
@@ -271,14 +237,31 @@ figure {
 }
 
 /* ======= main spawning ======= */
-
-#input-modal-spawn:checked ~ main,
-#input-modal-spawn:checked ~ .overlay {
-	display: block;
+main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	transform: translateX(100%);
+	transition: transform 300ms;
 }
-
+section {
+	box-sizing: border-box;
+	position: relative;
+	z-index: 10;
+	pointer-events: auto;
+	width: 815px;
+	overflow: hidden;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+	transform: translateX(-50%) translateY(-50%);
+	
+}
 .overlay {
-	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -288,7 +271,37 @@ figure {
 	cursor: pointer;
 }
 
-/* ======= viewer tab ======= */
+main,
+.overlay {
+	max-height: 0;
+	overflow: hidden;
+}
+#input-modal-spawn:checked ~ main {
+	transform: translateX(0);
+}
+
+#input-modal-spawn:checked ~ main,
+#input-modal-spawn:checked ~ .overlay {
+	max-height: 100vh;
+}
+
+#input-modal-spawn:checked ~ main section {
+	
+}
+
+/* ======= show photoviewr via viewer tab action ======= */
+.photo-viewer {
+	box-sizing: border-box;
+	width: 100%;
+	overflow: hidden;
+	z-index: 10;
+	pointer-events: none;
+	max-height: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: transform 300ms;
+}
+
 .input-tab-toggle:checked + label + .photo-viewer {
 	max-height: 100%;
     transform: translateX(0);
