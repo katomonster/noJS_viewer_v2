@@ -8,7 +8,7 @@ input {
 /* figure, shows the large image as bg image*/
 figure {
 	position: absolute;
-	top: 42px;
+	top: 0;
 	left: 0;
 	margin: 0;
 	width: 100%;
@@ -115,7 +115,7 @@ figure {
 .thumbnails {
 	width: 100%;
 	overflow: scroll;
-	margin: 585px 0 0;
+	margin: 542px 0 0;
 	-webkit-overflow-scrolling: touch;
 	border: 6px solid #fff;
 	box-sizing: border-box;
@@ -124,6 +124,7 @@ figure {
 .thumb-slider {
 	white-space: nowrap;
 	overflow: hidden;
+	background-color: #fff;
 }
 
 /* thumb slider widths*/
@@ -253,6 +254,7 @@ section {
 	z-index: 10;
 	pointer-events: auto;
 	width: 815px;
+	height: 684px;
 	overflow: hidden;
 	top: 50%;
 	left: 50%;
@@ -300,6 +302,9 @@ main,
     transform: translateX(100%);
     pointer-events: none;
     transition: transform 300ms;
+    position: relative;
+    top: 42px;
+    background: #000;
 }
 
 .input-tab-toggle:checked + label + .photo-viewer {
@@ -379,13 +384,14 @@ main,
 @media (max-width: 814px) {
 	section {
 		width: 100%;
+		height: calc(66.625vw + 132px);
 	}
 	.photo-viewer {
 		border-left: 8px solid #fff;
 		border-right: 8px solid #fff;
 	}
 	.thumbnails {
-		margin-top: calc(66.625vw + 32px);
+		margin-top: calc(66.625vw - 10px);
 		border-left: 0;
 		border-right: 0;
 	}
