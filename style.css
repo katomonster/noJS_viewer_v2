@@ -23,7 +23,7 @@ section {
 }
 .photo-viewer {
 	box-sizing: border-box;
-	width: 815px;
+	width: 100%;
 	overflow: hidden;
 	z-index: 10;
 	pointer-events: none;
@@ -363,8 +363,10 @@ figure {
 }
 
 @media (max-width: 814px) {
-	.photo-viewer {
+	section {
 		width: 100%;
+	}
+	.photo-viewer {
 		border-left: 8px solid #fff;
 		border-right: 8px solid #fff;
 	}
@@ -373,10 +375,10 @@ figure {
 		border-left: 0;
 		border-right: 0;
 	}
-	.viewer-tab:nth-of-type(2) {
+	.viewer-tab[for='tab-exterior-view'] {
 		left: 60px;
 	}
-	.viewer-tab:nth-of-type(3) {
+	.viewer-tab[for='tab-interior-view'] {
 		left: 140px;
 	}
 	.close-btn {
