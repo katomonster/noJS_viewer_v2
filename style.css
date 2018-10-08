@@ -1,141 +1,141 @@
 /* ======= general styles ======= */
 input {
-	display: none;
+    display: none;
 }
 
 /* ======= viewer ======= */
 
 /* figure, shows the large image as bg image*/
 figure {
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 0;
-	width: 100%;
-	height: 543px;
-	z-index: 1;
-	background-size: contain;
-	background-repeat: no-repeat;
-	pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 543px;
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
 }
 /* figure specific to prev/next actions */
 .for-next {
-	transform: translateX(100%);
+    transform: translateX(100%);
 }
 .for-prev {
-	transform: translateX(-100%);
+    transform: translateX(-100%);
 }
 
 /* thumbnail slider */
 .thumb-slider input[type=radio]:checked + figure {
-	transform: translateX(0);
-	transition: transform 500ms;
-	z-index: 10;
+    transform: translateX(0);
+    transition: transform 500ms;
+    z-index: 10;
 }
 .thumb-slider input[type=radio]:not(:active) + figure {
-	transition: transform 500ms;
+    transition: transform 500ms;
 }
 .thumb-slider input[type=radio]:active:not(:checked) + .for-next {
-	transform: translateX(-100%);
+    transform: translateX(-100%);
 }
 .thumb-slider input[type=radio]:active + .for-prev {
-	transform: translateX(100%);
+    transform: translateX(100%);
 }
 
 /* next prev button */
 .prev-btn,
 .next-btn {
-	position: absolute;
+    position: absolute;
     top: calc(50% - 32px);
     color: #fff;
     font-size: 30px;
     display: none;
     z-index: 20;
-	cursor: pointer;
-	transform: translateY(-50%);
+    cursor: pointer;
+    transform: translateY(-50%);
 }
 
 .prev-btn {
-	left: 12px;
+    left: 12px;
 }
 
 .prev-btn:before,
 .next-btn:before {
-	content: '';
-	display: block;
-	width: 30px;
-	height: 30px;
-	border: 0 solid #fff;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 0 solid #fff;
 }
 
 .prev-btn:before {
-	border-top-width: 4px;
-	border-left-width: 4px;
-	transform: rotate(-45deg);
-	box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.3)
+    border-top-width: 4px;
+    border-left-width: 4px;
+    transform: rotate(-45deg);
+    box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.3)
 }
 
 .next-btn {
-	right: 12px;
+    right: 12px;
 }
 
 .next-btn:before {
-	border-top-width: 4px;
-	border-right-width: 4px;
-	transform: rotate(45deg);
-	box-shadow: 2px -2px 3px rgba(0, 0, 0, 0.3)
+    border-top-width: 4px;
+    border-right-width: 4px;
+    transform: rotate(45deg);
+    box-shadow: 2px -2px 3px rgba(0, 0, 0, 0.3)
 }
 
 .thumb-slider input[type=radio]:checked + figure + input + figure + .thumb + .prev-btn,
 .thumb-slider input[type=radio]:checked + figure + input + figure + .thumb + .prev-btn + .next-btn,
 .thumb-slider input[type=radio]:checked + figure + .thumb + .prev-btn,
 .thumb-slider input[type=radio]:checked + figure + .thumb + .prev-btn + .next-btn {
-	display: block;
+    display: block;
 }
 
 
 /* thumbnail */
 .thumb-slider input[type=radio]:checked + figure + input + figure + .thumb,
 .thumb-slider input[type=radio]:checked + figure + .thumb {
-	opacity: 0.5;
+    opacity: 0.5;
 }
 
 .thumb {
-	width: 144px;
-	height: 88px;
-	background-size: cover;
-	float:left;
-	cursor: pointer;
-	margin-right: 4px;
+    width: 144px;
+    height: 88px;
+    background-size: cover;
+    float:left;
+    cursor: pointer;
+    margin-right: 4px;
 }
 .thumb-slider figure:last-of-type + .thumb {
-	margin-right: 0;
+    margin-right: 0;
 }
 
 .thumbnails {
-	width: 100%;
-	overflow: scroll;
-	margin: 542px 0 0;
-	-webkit-overflow-scrolling: touch;
-	border: 6px solid #fff;
-	box-sizing: border-box;
-	pointer-events: auto;
+    width: 100%;
+    overflow: scroll;
+    margin: 542px 0 0;
+    -webkit-overflow-scrolling: touch;
+    border: 6px solid #fff;
+    box-sizing: border-box;
+    pointer-events: auto;
 }
 .thumb-slider {
-	white-space: nowrap;
-	overflow: hidden;
-	background-color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #fff;
 }
 
 /* thumb slider widths*/
 .all-view .thumb-slider {
-	width: 2216px;
+    width: 2216px;
 }
 .exterior-view .thumb-slider {
-	width: 1484px;
+    width: 1484px;
 }
 .interior-view .thumb-slider {
-	width: 736px
+    width: 736px
 }
 
 /* background image */
@@ -143,162 +143,162 @@ figure {
 .image01-prev + figure,
 .thumb[for='image01'],
 .thumb[for='image01-ex'] {
-	background-image: url(images/image01.jpg);
+    background-image: url(images/image01.jpg);
 }
 .image02 + figure,
 .image02-prev + figure,
 .thumb[for='image02'],
 .thumb[for='image02-ex'] {
-	background-image: url(images/image02.jpg);
+    background-image: url(images/image02.jpg);
 }
 .image03 + figure,
 .image03-prev + figure,
 .thumb[for='image03'] ,
 .thumb[for='image03-ex']{
-	background-image: url(images/image03.jpg);
+    background-image: url(images/image03.jpg);
 }
 .image04 + figure,
 .image04-prev + figure,
 .thumb[for='image04'],
 .thumb[for='image04-ex'] {
-	background-image: url(images/image04.jpg);
+    background-image: url(images/image04.jpg);
 }
 .image05 + figure,
 .image05-prev + figure,
 .thumb[for='image05'],
 .thumb[for='image05-ex'] {
-	background-image: url(images/image05.jpg);
+    background-image: url(images/image05.jpg);
 }
 .image06 + figure,
 .image06-prev + figure,
 .thumb[for='image06'],
 .thumb[for='image06-ex'] {
-	background-image: url(images/image06.jpg);
+    background-image: url(images/image06.jpg);
 }
 .image07 + figure,
 .image07-prev + figure,
 .thumb[for='image07'],
 .thumb[for='image07-ex'] {
-	background-image: url(images/image07.jpg);
+    background-image: url(images/image07.jpg);
 }
 .image08 + figure,
 .image08-prev + figure,
 .thumb[for='image08'],
 .thumb[for='image08-ex'] {
-	background-image: url(images/image08.jpg);
+    background-image: url(images/image08.jpg);
 }
 .image09 + figure,
 .image09-prev + figure,
 .thumb[for='image09'],
 .thumb[for='image09-ex'] {
-	background-image: url(images/image09.jpg);
+    background-image: url(images/image09.jpg);
 }
 .image10 + figure,
 .image10-prev + figure,
 .thumb[for='image10'],
 .thumb[for='image10-ex'] {
-	background-image: url(images/image10.jpg);
+    background-image: url(images/image10.jpg);
 }
 .image11 + figure,
 .image11-prev + figure,
 .thumb[for='image11'],
 .thumb[for='image11-int'] {
-	background-image: url(images/image11.jpg);
+    background-image: url(images/image11.jpg);
 }
 .image11 + figure,
 .image11-prev + figure,
 .thumb[for='image11'],
 .thumb[for='image11-int'] {
-	background-image: url(images/image11.jpg);
+    background-image: url(images/image11.jpg);
 }
 .image12 + figure,
 .image12-prev + figure,
 .thumb[for='image12'],
 .thumb[for='image12-int'] {
-	background-image: url(images/image12.jpg);
+    background-image: url(images/image12.jpg);
 }
 .image13 + figure,
 .image13-prev + figure,
 .thumb[for='image13'],
 .thumb[for='image13-int'] {
-	background-image: url(images/image13.jpg);
+    background-image: url(images/image13.jpg);
 }
 .image14 + figure,
 .image14-prev + figure,
 .thumb[for='image14'],
 .thumb[for='image14-int'] {
-	background-image: url(images/image14.jpg);
+    background-image: url(images/image14.jpg);
 }
 
 .image15 + figure,
 .image15-prev + figure,
 .thumb[for='image15'],
 .thumb[for='image15-int'] {
-	background-image: url(images/image15.jpg);
+    background-image: url(images/image15.jpg);
 }
 
 /* ======= main spawning ======= */
 main {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	transform: translateX(100%);
-	transition: transform 300ms;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: transform 300ms;
 }
 section {
-	box-sizing: border-box;
-	position: relative;
-	z-index: 10;
-	pointer-events: auto;
-	width: 815px;
-	height: 684px;
-	overflow: hidden;
-	top: 50%;
-	left: 50%;
-	background: #fff;
-	box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-	transform: translateX(-50%) translateY(-50%);
-	
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    width: 815px;
+    height: 684px;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    transform: translateX(-50%) translateY(-50%);
+    
 }
 .overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,0.5);
-	cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
 }
 
 main,
 .overlay {
-	max-height: 0;
-	overflow: hidden;
+    max-height: 0;
+    overflow: hidden;
 }
 #input-modal-spawn:checked ~ main {
-	transform: translateX(0);
+    transform: translateX(0);
 }
 
 #input-modal-spawn:checked ~ main,
 #input-modal-spawn:checked ~ .overlay {
-	max-height: 100vh;
+    max-height: 100vh;
 }
 
 #input-modal-spawn:checked ~ main section {
-	
+    
 }
 
 /* ======= show photoviewr via viewer tab action ======= */
 .photo-viewer {
-	box-sizing: border-box;
-	width: 100%;
-	overflow: hidden;
-	z-index: 10;
-	pointer-events: none;
-	max-height: 0;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    pointer-events: none;
+    max-height: 0;
     transform: translateX(100%);
     pointer-events: none;
     transition: transform 300ms;
@@ -308,64 +308,64 @@ main,
 }
 
 .input-tab-toggle:checked + label + .photo-viewer {
-	max-height: 100%;
+    max-height: 100%;
     transform: translateX(0);
 }
 
 .input-tab-toggle:checked + label {
-	color: #007ee5;
-	text-decoration: underline;
-	font-weight: bold;
+    color: #007ee5;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .input-tab-toggle:checked  ~ .close-btn { display: block; }
 
 .viewer-tab {
-	position: absolute;
-	top: 0;
-	color: #555;
-	line-height: 28px;
-	font-family: Helvetica, Arial, sans-serif;
-	display: block;
-	width: 100px;
-	text-indent: 20px;
-	font-size: 14px;
+    position: absolute;
+    top: 0;
+    color: #555;
+    line-height: 28px;
+    font-family: Helvetica, Arial, sans-serif;
+    display: block;
+    width: 100px;
+    text-indent: 20px;
+    font-size: 14px;
 }
 .viewer-tab[for='tab-all-view'] {
-	left: 0;
+    left: 0;
 }
 .viewer-tab[for='tab-exterior-view'] {
-	left: 80px;
+    left: 80px;
 }
 .viewer-tab[for='tab-interior-view'] {
-	left: 180px;
+    left: 180px;
 }
 .viewer-tab,
 .close-btn {
-	color: #555;
-	font-family: Helvetica, Arial, sans-serif;
-	cursor: pointer;
+    color: #555;
+    font-family: Helvetica, Arial, sans-serif;
+    cursor: pointer;
     line-height: 42px;
 }
 
 .view-all-btn {
-	display: block;
-	max-width: 510px;
-	max-height: 600px;
-	width: 100%;
-	height: 105vw;
-	overflow: hidden;
-	text-indent: 100%;
-	white-space: nowrap;
-	background-image: url(images/landing-image.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    display: block;
+    max-width: 510px;
+    max-height: 600px;
+    width: 100%;
+    height: 105vw;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background-image: url(images/landing-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
 }
 
 .close-btn {
-	display: none;
-	position: absolute;
+    display: none;
+    position: absolute;
     top: 0;
     right: 10px;
     white-space: nowrap;
@@ -377,31 +377,35 @@ main,
 }
 
 .close-btn:before {
-	content: "\00d7" " ";
-	font-size: 30px;
+    content: "\00d7" " ";
+    font-size: 30px;
 }
 
 @media (max-width: 814px) {
-	section {
-		width: 100%;
-		height: calc(66.625vw + 132px);
-	}
-	.photo-viewer {
-		border-left: 8px solid #fff;
-		border-right: 8px solid #fff;
-	}
-	.thumbnails {
-		margin-top: calc(66.625vw - 10px);
-		border-left: 0;
-		border-right: 0;
-	}
-	.viewer-tab[for='tab-exterior-view'] {
-		left: 60px;
-	}
-	.viewer-tab[for='tab-interior-view'] {
-		left: 140px;
-	}
-	.close-btn {
-		right: 0;
-	}
+    section {
+        width: 100%;
+        height: calc(66.625vw + 132px);
+    }
+    figure {
+        width: calc(100vw - 16px);
+        height: calc(66.625vw - 10px);
+    }
+    .photo-viewer {
+        border-left: 8px solid #fff;
+        border-right: 8px solid #fff;
+    }
+    .thumbnails {
+        margin-top: calc(66.625vw - 10px);
+        border-left: 0;
+        border-right: 0;
+    }
+    .viewer-tab[for='tab-exterior-view'] {
+        left: 60px;
+    }
+    .viewer-tab[for='tab-interior-view'] {
+        left: 140px;
+    }
+    .close-btn {
+        right: 0;
+    }
 }
