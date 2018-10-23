@@ -6,10 +6,8 @@
         <meta name='viewport' content='width=device-width initial-scale=1.0 minimum-scale=1.0 maximum-scale=1.0 user-scalable=no'/>
 </head>
 <body>
-	<input type='checkbox' id='input-modal-spawn'>
-	<label for='input-modal-spawn' class='view-all-btn'>See Photos</label>
-	<label for='input-modal-spawn' class='overlay'></label>
-	<main>
+	<a href='#photo-modal' class='view-all-btn'>See Photos</a>
+	<main id='photo-modal'>
 		<section>
 			<input type='radio' name='tab-toggle' class='input-tab-toggle' id='tab-all-view' checked>
 			<label class='viewer-tab' for='tab-all-view'>All</label>
@@ -274,8 +272,9 @@
 					</form>
 				</div>
 			</div>
-			<label for='input-modal-spawn' class='close-btn'>Close</label>
+			<a href='' class='close-btn'>Close</a>
 		</section>
 	</main>
+	<a href='' class='overlay'></a>
 </body>
 </html>

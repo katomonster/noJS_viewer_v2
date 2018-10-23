@@ -278,17 +278,15 @@ main,
     max-height: 0;
     overflow: hidden;
 }
-#input-modal-spawn:checked ~ main {
-    transform: translateX(0);
-}
 
-#input-modal-spawn:checked ~ main,
-#input-modal-spawn:checked ~ .overlay {
+main:target,
+main:target + .overlay {
     max-height: 100vh;
 }
 
-#input-modal-spawn:checked ~ main section {
-    
+main:target {
+    transform: translateX(0);
+    z-index: 1;
 }
 
 /* ======= show photoviewr via viewer tab action ======= */
