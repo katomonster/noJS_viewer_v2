@@ -273,18 +273,13 @@ section {
     cursor: pointer;
 }
 
-main,
-.overlay {
+main {
     max-height: 0;
     overflow: hidden;
 }
 
-main:target,
-main:target + .overlay {
-    max-height: 100vh;
-}
-
 main:target {
+    max-height: 100vh;
     transform: translateX(0);
     z-index: 1;
 }
