@@ -247,6 +247,18 @@ main {
     pointer-events: none;
     transform: translateX(100%);
     transition: transform 300ms;
+    max-height: 0;
+    overflow: hidden;
+}
+
+main:target {
+    max-height: 100vh;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+main:target .overlay {
+    height: 100%;
 }
 section {
     box-sizing: border-box;
@@ -268,22 +280,13 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 0;
     background: rgba(0,0,0,0.5);
     cursor: pointer;
     pointer-events: auto;
 }
 
-main {
-    max-height: 0;
-    overflow: hidden;
-}
 
-main:target {
-    max-height: 100vh;
-    transform: translateX(0);
-    z-index: 1;
-}
 
 /* ======= show photoviewr via viewer tab action ======= */
 .photo-viewer {
