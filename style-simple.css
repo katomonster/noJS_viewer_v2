@@ -1,0 +1,335 @@
+/* ======= general styles ======= */
+input {
+    display: none;
+}
+
+/* ======= viewer ======= */
+
+/* figure, shows the large image as bg image*/
+figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 543px;
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+/* figure specific to prev/next actions */
+.for-next {
+    transform: translateX(100%);
+}
+.for-prev {
+    transform: translateX(-100%);
+}
+
+/* thumbnail slider */
+.thumb-slider input[type=radio]:checked + figure {
+    transform: translateX(0);
+    transition: transform 500ms;
+    z-index: 10;
+}
+.thumb-slider input[type=radio]:not(:active) + figure {
+    transition: transform 500ms;
+}
+.thumb-slider input[type=radio]:active:not(:checked) + .for-next {
+    transform: translateX(-100%);
+}
+.thumb-slider input[type=radio]:active + .for-prev {
+    transform: translateX(100%);
+}
+
+/* next prev button */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: calc(50% - 32px);
+    color: #fff;
+    font-size: 30px;
+    display: none;
+    z-index: 20;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.prev-btn {
+    left: 12px;
+}
+
+.prev-btn:before,
+.next-btn:before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 0 solid #fff;
+}
+
+.prev-btn:before {
+    border-top-width: 4px;
+    border-left-width: 4px;
+    transform: rotate(-45deg);
+    box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.3)
+}
+
+.next-btn {
+    right: 12px;
+}
+
+.next-btn:before {
+    border-top-width: 4px;
+    border-right-width: 4px;
+    transform: rotate(45deg);
+    box-shadow: 2px -2px 3px rgba(0, 0, 0, 0.3)
+}
+
+.thumb-slider input[type=radio]:checked + figure + input + figure + .prev-btn,
+.thumb-slider input[type=radio]:checked + figure + input + figure + .prev-btn + .next-btn,
+.thumb-slider input[type=radio]:checked + figure + .prev-btn,
+.thumb-slider input[type=radio]:checked + figure + .prev-btn + .next-btn {
+    display: block;
+}
+
+
+.thumbnails {
+    width: 100%;
+    overflow: scroll;
+    margin: 542px 0 0;
+    -webkit-overflow-scrolling: touch;
+    border: 6px solid #fff;
+    box-sizing: border-box;
+    pointer-events: auto;
+}
+.thumb-slider {
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* thumb slider widths*/
+.all-view .thumb-slider {
+    width: 2216px;
+}
+.exterior-view .thumb-slider {
+    width: 1484px;
+}
+.interior-view .thumb-slider {
+    width: 736px
+}
+
+/* background image */
+.image01 + figure,
+.image01-prev + figure {
+    background-image: url(images/image01.jpg);
+}
+.image02 + figure,
+.image02-prev + figure {
+    background-image: url(images/image02.jpg);
+}
+.image03 + figure,
+.image03-prev + figure {
+    background-image: url(images/image03.jpg);
+}
+.image04 + figure,
+.image04-prev + figure {
+    background-image: url(images/image04.jpg);
+}
+.image05 + figure,
+.image05-prev + figure {
+    background-image: url(images/image05.jpg);
+}
+.image06 + figure,
+.image06-prev + figure {
+    background-image: url(images/image06.jpg);
+}
+.image07 + figure,
+.image07-prev + figure {
+    background-image: url(images/image07.jpg);
+}
+.image08 + figure,
+.image08-prev + figure {
+    background-image: url(images/image08.jpg);
+}
+.image09 + figure,
+.image09-prev + figure {
+    background-image: url(images/image09.jpg);
+}
+.image10 + figure,
+.image10-prev + figure {
+    background-image: url(images/image10.jpg);
+}
+.image11 + figure,
+.image11-prev + figure {
+    background-image: url(images/image11.jpg);
+}
+.image11 + figure,
+.image11-prev + figure  {
+    background-image: url(images/image11.jpg);
+}
+.image12 + figure,
+.image12-prev + figure {
+    background-image: url(images/image12.jpg);
+}
+.image13 + figure,
+.image13-prev + figure {
+    background-image: url(images/image13.jpg);
+}
+.image14 + figure,
+.image14-prev + figure {
+    background-image: url(images/image14.jpg);
+}
+
+.image15 + figure,
+.image15-prev + figure {
+    background-image: url(images/image15.jpg);
+}
+
+/* ======= main spawning ======= */
+main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: transform 300ms;
+    max-height: 0;
+    overflow: hidden;
+}
+
+main:target {
+    max-height: 100vh;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+main:target .overlay {
+    height: 100%;
+}
+section {
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    width: 815px;
+    height: 543px;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    transform: translateX(-50%) translateY(-50%);
+    
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+
+
+/* ======= show photoviewr via viewer tab action ======= */
+.photo-viewer {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    pointer-events: none;
+    position: relative;
+    background: #000;
+}
+
+.viewer-tab {
+    position: absolute;
+    top: 0;
+    color: #555;
+    line-height: 28px;
+    font-family: Helvetica, Arial, sans-serif;
+    display: block;
+    width: 100px;
+    text-indent: 20px;
+    font-size: 14px;
+}
+
+.viewer-tab,
+.close-btn {
+    color: #555;
+    font-family: Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    line-height: 42px;
+}
+
+.view-all-btn {
+    display: block;
+    max-width: 510px;
+    max-height: 600px;
+    width: 100%;
+    height: 105vw;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background-image: url(images/landing-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.close-btn {
+    position: absolute;
+    color: #fff;
+    top: 0;
+    right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 100%;
+    width: 42px;
+    text-decoration: none;
+    z-index: 10;
+}
+.close-btn::before {
+    content: "\00d7";
+    font-size: 30px;
+    position: absolute;
+    text-shadow: 0 0 2px #000;
+    transform: translateX(-50%);
+    left: 0;
+}
+
+@media (max-width: 814px) {
+    section {
+        width: 100%;
+        height: calc(66.625vw + 132px);
+    }
+    figure {
+        width: calc(100vw - 16px);
+        height: calc(66.625vw - 10px);
+    }
+    .photo-viewer {
+        border-left: 8px solid #fff;
+        border-right: 8px solid #fff;
+    }
+    .thumbnails {
+        margin-top: calc(66.625vw - 10px);
+        border-left: 0;
+        border-right: 0;
+    }
+    .viewer-tab[for='tab-exterior-view'] {
+        left: 60px;
+    }
+    .viewer-tab[for='tab-interior-view'] {
+        left: 140px;
+    }
+    .close-btn {
+        right: 0;
+    }
+}
